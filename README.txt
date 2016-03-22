@@ -1,10 +1,18 @@
 SimpleWebServer.java is a simple webserver.
   
+Change directory to the directory containing your java files.
+javac *.java
+
 To run SimpleWebServer.java run:
-java SimpleWebServer <directory>
+java webServer.SimpleWebServer <directory>
 where directory is the directory that you wish to serve files from.
- 
+
+N.B you may need to run java with the classpath option
+java -cp .  webServer.SimpleWebServer <directory>
 To kill the server, type Ctrl-C.
+
+When your server is successfully running you should see:
+Listening on port 80
 
 The server returns the files and subdirectories from this directory on a initial request.
 The user can then select any of the files or subdirectories listed. When a file is selected, 
