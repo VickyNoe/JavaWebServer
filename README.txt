@@ -1,6 +1,6 @@
 SimpleWebServer.java is a simple webserver.
   
-Change directory to the directory containing your java files.
+In order to compile SimpleWebServer.java, change directory to the directory containing SimpleWebServer and all of the other java files and run:
 javac *.java
 
 To run SimpleWebServer.java run:
@@ -17,7 +17,7 @@ Listening on port 80
 The server returns the files and subdirectories from this directory on a initial request.
 The user can then select any of the files or subdirectories listed. When a file is selected, 
 it returns the file contents, when a sudirectory is selected it returns and lists files and
-directories.
+subdirectories.
 
 Client requests are logged to standard output.
 

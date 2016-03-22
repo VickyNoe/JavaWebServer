@@ -12,7 +12,7 @@ public class PageWriter {
 	}
 		
 	/**
-	 * Write the html page, constructing the links to all the files
+	 * Write the html page, constructing the links to all the files and subdirectories
 	 * 
 	 * @param requestedDirectory - directory containing the links
 	 * @param homeDirectory

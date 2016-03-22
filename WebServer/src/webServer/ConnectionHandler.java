@@ -99,7 +99,7 @@ public class ConnectionHandler {
 
 	/**
 	 * Handles a request for a file. If the file doesn't exist, send the message
-	 * "404 Not Found". Otherwise, send the message "OK" followed by the file
+	 * "404 Not Found". Otherwise, send the message "200 OK" followed by the file
 	 * contents
 	 * 
 	 * @param file - the requested file
@@ -110,7 +110,6 @@ public class ConnectionHandler {
 		if ((!file.exists()) || file.isDirectory()) {
 			writeFileNotFoundResponseHeader(outputWriter);
 		} else {
-			outputWriter.writeBytes("OK");
 			int numOfBytes = (int) file.length();
 			byte[] fileInBytes = readFile(file, numOfBytes);
 			writeFileResponseHeader(file, outputWriter, numOfBytes);

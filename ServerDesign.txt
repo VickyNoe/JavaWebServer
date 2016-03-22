@@ -1,23 +1,32 @@
 Classes
 SimpleWebServer
-The main class used for listening to requests is the SimpleWebServer class. This class loops indefinitely waiting for request. The SimpleWebServer accepts a directory as an input argument.  This directory is the initial directory form which you wish to serve files from. The main purpose of this class is to listen for incoming requests but it doesn’t actually do much else than this.  
+The main class used for listening to requests is the SimpleWebServer class. This class loops indefinitely waiting for request. When running the SimpleWebServer, it accepts a directory as an input argument.  This directory is the initial directory form which you wish to serve files from. The main purpose of this class is to listen for incoming requests but the actual handling of these requests in performed by the ConnectionHandler class.  
 
 ConnectionHandler
-This class is used to actually handle the requests received by the SimpleWebServer class.  It determines the type of request being received and parses the incoming request to obtain the requested file name or directory to be served.  It writes the file or directory contents out to the response to be returned to the client.  In future, the class could be extended to extend from Thread so that each connection could be handled by a separate thread, thus allowing the WebServer to handle multiple requests at once.
+This class is used to actually handle the requests received by the SimpleWebServer class.  It determines the type of request being received and parses the incoming request to obtain the requested file name or directory to be served.  It writes the file or directory contents out to the response to be returned to the client.  In future, the class could be extended to extend from Thread so that each connection could be handled by a separate thread, thus allowing the WebServer to handle multiple requests at once.  This is part of the reason for splitting the handling into a separate class.
 
 PageWriter
 This class is a helper class for the ConnectionHandler class to write out the html page for the contents of a directory.
 
 Comments have been included for all methods.  Despite some people objecting to the use of commenting, they have been included for complete clarity.  They could easily be removed if required.
 
+The structuring of the classes and methods could do with some more finessing.
+
 Still to be done
 •	Returning the file size, length and description
 •	The clickable headings for a directory listing page and then sorting of the file items based on the properties
 •	Implement logging – system.out.printlns have been used to log information to the console – this could be converted to a proper logging implementation
-•	Automation of system testing – writing client code to send requests and test the responses
+•	Automation of system testing – writing client code to send requests and test the responses - currently manual system testing has been performed.
 •	Unit testing
 •	Extract some more of the ConnectionHandler class function into new classes
 •	Directory recursion implementation
-•	Serve a file not found page
-•	Beef out the exception handling
+•	Serve a file not found page - the file not found header is returned, but a page to display this info needs to be constructed and served.
+•	Flesh out the exception handling to make the sytem more robust.
+•	Make the port that the server runs on a configurable argument.
+•	Implement a proper build system with build files and configurations.
+•	There is a secondary null request coming through to the handler in current testing - investigate and fix
+
+
+
+
 
