@@ -1,0 +1,18 @@
+Tests
+1. Run program with invalid directory
+2. Run program with empty directory
+3. Run program with valid directory
+	1. Go to localhost, the contents of the directory specified are valid
+        2. Click on a text file, the contents of the file are displayed
+ 	3. Click on a jpeg file, the contents of the file are displayed
+	4. Click on a image file, the contents of the file are displayed
+	5. Click on an icon file, the contents of the file are displayed
+	6. Click on a subdirectory, the contents of the subdirectory are displayed, the home directory link is displayed
+		1. Click on a file in the subdirectory, the contents of the file are displayed
+		2. Click on the parent directory link, the parent directory contents are displayed
+	7. Click on an empty text file
+	8. Click on a very large text file
+4. Send a POST request - invalid request
+5. Send a GET request with an invalid filename - 404 file not found
+
+Further test cases will be needed for the additional functionality still to be implemented.
